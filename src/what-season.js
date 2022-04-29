@@ -20,9 +20,13 @@ const { NotImplementedError } = require('../extensions/index.js');
 }
 function getSeason(date) {
   let today = new Date();
-
-  // console.log(date.getMilliseconds());
-  // console.log(date.toString())
+  if (
+    (date instanceof Date === false ||
+      Object.getOwnPropertyNames(date).length > 0) &&
+    arguments.length > 0
+  ) {
+    throw new ValidationError('Invalid date!');
+  }
   if (date === undefined) {
     return 'Unable to determine the time of year!';
   }
@@ -35,7 +39,7 @@ function getSeason(date) {
       throw new ValidationError('Invalid date!');
     } else if (!new Date()) {
       throw new ValidationError('Invalid date!');
-    } else if (date.getMilliseconds() > 0) {
+    } else  if (date.getMilliseconds() > 0) {
       if (typeof date.getMonth === 'function') {
         let month = date.getMonth();
         if (month === 0 || month === 1 || month === 11) {
