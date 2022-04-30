@@ -28,6 +28,8 @@ const { NotImplementedError } = require('../extensions/index.js');
   let result = [];
   if (!Array.isArray(arr)) {
     throw new ValidationError(`'arr' parameter must be an instance of the Array!`);
+  } else if(arr.length === 0){
+    return []
   } else {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] === '--discard-next' || arr[i] === '--discard-prev' || arr[i] === '--double-next' || arr[i] === '--double-prev') {
