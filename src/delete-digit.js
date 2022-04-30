@@ -15,7 +15,6 @@ const { NotImplementedError } = require('../extensions/index.js');
   n = n.toString()
   
   let arr = n.split('')
-  console.log(arr)
   for (let i = 0; i < arr.length; i++) {
   
     if ( Number(arr[i]) < Number(arr[i + 1]) || i === arr.length - 1) {

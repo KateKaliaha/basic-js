@@ -35,7 +35,7 @@ const { NotImplementedError } = require('../extensions/index.js');
       if (arr[i] === '--discard-next' || arr[i] === '--discard-prev' || arr[i] === '--double-next' || arr[i] === '--double-prev') {
         switch(arr[i]) {
           case '--discard-next':
-            if( typeof arr[i + 1] == 'number') {
+            if(typeof arr[i + 1] == 'number') {
               i +=2;
             }
             break;
